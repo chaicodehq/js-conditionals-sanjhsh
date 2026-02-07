@@ -2,7 +2,8 @@
  * 💰 Sam's Tax Calculator
  *
  * Sam is a freelance graphic designer who dreads tax season every year.
- * Help Sam by building a tax calculator that uses progressive tax brackets.
+ * Help Sam by building a tax calculator that uses prog
+ * ressive tax brackets.
  *
  * How progressive tax works:
  *   You don't pay the same rate on ALL your income. Each "slice" of income
@@ -27,4 +28,21 @@
  */
 export function calculateTax(income) {
   // Your code here
+  let totalTax=0.00;
+  if (income>0 && income!=0){
+    if (income<=10000){
+      totalTax+=0;
+    }
+    else if (income<=30000){
+      totalTax+= (10/100)*(income-10000);
+    }
+    else if(income<=70000){
+      totalTax+= 2000 + (20/100)*(income-30000);
+    }
+    else if (income>70000){
+      totalTax+= 2000 +8000 +(30/100)*(income-70000)
+    }
+    return totalTax;
+  }
+  return 0;
 }

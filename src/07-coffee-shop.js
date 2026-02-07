@@ -32,4 +32,24 @@
  */
 export function calculateCoffeePrice(size, type, extras = {}) {
   // Your code here
+let sizePrice={
+  small:3.00,
+  medium:4.00,
+  large :5.00
+};
+let coffeeType={
+  regular:0.00,
+  latte:1.00,
+  cappuccino:1.50,
+  mocha:2.00
+};
+if (sizePrice[size]===undefined || coffeeType[type]===undefined ){
+  return -1;
+}
+let totalprice=sizePrice[size]+coffeeType[type];
+
+if (extras.whippedCream) totalprice+=0.50;
+if (extras.extraShot) totalprice +=0.75;
+
+return Number(totalprice.toFixed(2))
 }
